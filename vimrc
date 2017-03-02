@@ -96,6 +96,17 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+" ==============================================================
+" NOTE(boyan): END of example file; Boyan's n00b settings follow:
+execute pathogen#infect()
+" NOTE(boyan): old way:
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
+
+if has("autocmd")
+    filetype plugin indent on
+endif
+
 "Key mappings
 imap jj <Esc>
 
@@ -109,8 +120,25 @@ set directory^=~/vimtmp,.
 "set noswapfile     #no swap files
 
 " Plugins
-set runtimepath^=~/.vim/bundle/nerdtree
-helptags ~/.vim/bundle/nerdtree/doc/
+" set runtimepath^=~/.vim/bundle/nerdtree
+" helptags ~/.vim/bundle/nerdtree/doc/
+" execute pathogen#infect()
+" syntax on
+" filetype plugin indent on
 
+" Spaces in tabs formatting:
 
+set tabstop=4	    " The width of a TAB is set to 4.
+                    " Still it is a \t. It is just that
+        		    " Vim will interpret it to be having
+	        	    " a width of 4.
+
+set shiftwidth=4    " Indents will
+                    " have a width of 4
+
+set softtabstop=4   " Sets the
+		            " number of
+		            " columns for a TAB
+
+set expandtab      " Expand TABs to spaces
 
