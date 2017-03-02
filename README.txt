@@ -1,4 +1,7 @@
+My N00b settings for Vim, Linux (and Windows?)
+
 Installation:
+
 
     git clone https://github.com/boyanstoyanov/dotvim.git ~/.vim
 
