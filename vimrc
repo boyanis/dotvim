@@ -149,6 +149,9 @@ set softtabstop=4   " Sets the
 
 set expandtab      " Expand TABs to spaces
 
+"DISABLE AUTO COMMENT NEXT LINE:
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Display line numbers
 set number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
