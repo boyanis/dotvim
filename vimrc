@@ -150,7 +150,8 @@ set softtabstop=2   " Sets the
 set expandtab      " Expand TABs to spaces
 
 " Display line numbers
-set nonumber
+set number
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Shell command to display shell results:
 function! s:ExecuteInShell(command)
@@ -249,14 +250,6 @@ nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 " NOW WE CAN:
 " - Take over the world!
 "   (with much fewer keystrokes)
-
-
-
-
-
-
-
-
 
 " BUILD INTEGRATION:
 
