@@ -27,7 +27,9 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
+
 set history=50		" keep 50 lines of command line history
+
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
@@ -111,8 +113,17 @@ endif
 imap jj <Esc>
 
 " Custom backup dir (clean it!):
+if has ("win32") || has ("win64")
+
+set backupdir^=$HOME/vimtmp,.
+set directory^=$HOME/vimtmp,.
+
+else
+
 set backupdir^=~/vimtmp,.
 set directory^=~/vimtmp,.
+
+endif
 
 "Or, disbvale backup:
 "set nobackup       #no backup files
