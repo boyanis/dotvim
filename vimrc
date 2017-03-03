@@ -135,15 +135,15 @@ endif
 
 " Spaces in tabs formatting:
 
-set tabstop=2	    " The width of a TAB is set to 4.
+set tabstop=4	    " The width of a TAB is set to 4.
 " Still it is a \t. It is just that
 " Vim will interpret it to be having
 " a width of 4.
 
-set shiftwidth=2    " Indents will
+set shiftwidth=4    " Indents will
 " have a width of 4
 
-set softtabstop=2   " Sets the
+set softtabstop=4   " Sets the
 " number of
 " columns for a TAB
 
@@ -152,6 +152,15 @@ set expandtab      " Expand TABs to spaces
 " Display line numbers
 set number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" Highlight 110th column;
+" set colorcolumn=110
+" highlight ColorColumn ctermbg=DarkGrey
+" set cindent
+
+" Vim will create local/project-based vimrc files:
+set exrc
+"set secure - at the end of the file
 
 " Shell command to display shell results:
 function! s:ExecuteInShell(command)
@@ -259,3 +268,4 @@ nnoremap ,html :-1read $HOME/dotVim/skeleton.html<CR>3jwf>a
 " Configure the `make` command to run RSpec
 set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
 
+set secure
