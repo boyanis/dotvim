@@ -21,6 +21,8 @@ Installation:
     7.  Create soft link to 
         vimfiles [$HOME\dotvim\vimfiles] (as explained above, replace $HOME
         with its value, usually C:\Users\<Username> for Win )
+        > mklink /d
+D:\Programs\VimWindows\Vim\vimfiles C:\Users\<Username>\dotvim\vimfiles
     
   LINUX:
         Similar as Windows, replace paths as necessary; (TODO(boyan): maybe
