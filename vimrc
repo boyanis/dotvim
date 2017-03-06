@@ -27,7 +27,9 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
+
 set history=50		" keep 50 lines of command line history
+
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
@@ -103,16 +105,21 @@ execute pathogen#infect()
 " call pathogen#runtime_append_all_bundles()
 " call pathogen#helptags()
 
-if has("autocmd")
-  filetype plugin indent on
-endif
-
 "Key mappings
 imap jj <Esc>
 
 " Custom backup dir (clean it!):
+if has ("win32") || has ("win64")
+
+set backupdir^=$HOME/vimtmp,.
+set directory^=$HOME/vimtmp,.
+
+else
+
 set backupdir^=~/vimtmp,.
 set directory^=~/vimtmp,.
+
+endif
 
 "Or, disbvale backup:
 "set nobackup       #no backup files
@@ -128,22 +135,35 @@ set directory^=~/vimtmp,.
 
 " Spaces in tabs formatting:
 
-set tabstop=2	    " The width of a TAB is set to 4.
+set tabstop=4	    " The width of a TAB is set to 4.
 " Still it is a \t. It is just that
 " Vim will interpret it to be having
 " a width of 4.
 
-set shiftwidth=2    " Indents will
+set shiftwidth=4    " Indents will
 " have a width of 4
 
-set softtabstop=2   " Sets the
+set softtabstop=4   " Sets the
 " number of
 " columns for a TAB
 
 set expandtab      " Expand TABs to spaces
 
+"DISABLE AUTO COMMENT NEXT LINE:
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Display line numbers
-set nonumber
+set number
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" Highlight 110th column;
+" set colorcolumn=110
+" highlight ColorColumn ctermbg=DarkGrey
+" set cindent
+
+" Vim will create local/project-based vimrc files:
+set exrc
+"set secure - at the end of the file
 
 " Shell command to display shell results:
 function! s:ExecuteInShell(command)
@@ -160,3 +180,95 @@ function! s:ExecuteInShell(command)
   echo 'Shell command ' . command . ' executed.'
 endfunction
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
+
+
+" the guy (Max Cantor) who uses 90% vim instead of plugins: youtube.com/watch?v=XA2WjJbmmoM
+" https://github.com/mcantor/no_plugins/blob/master/no_plugins.vim
+
+" FINDING FILES:
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" NOW WE CAN:
+" - Hit tab to :find by partial match
+" - Use * to make it fuzzy
+
+" THINGS TO CONSIDER:
+" - :b lets you autocomplete any open buffer
+
+
+" TAG JUMPING:
+
+" Create the `tags` file (may need to install ctags first)
+" (currently disabled - no ctags on Windows; don't need for now.)
+" command! MakeTags !ctags -R .
+
+" NOW WE CAN:
+" - Use ^] to jump to tag under cursor
+" - Use g^] for ambiguous tags
+" - Use ^t to jump back up the tag stack
+
+" THINGS TO CONSIDER:
+" - This doesn't help if you want a visual list of tags
+
+
+
+
+
+" AUTOCOMPLETE:
+
+" The good stuff is documented in |ins-completion|
+
+" HIGHLIGHTS:
+" - ^x^n for JUST this file
+" - ^x^f for filenames (works with our path trick!)
+" - ^x^] for tags only
+" - ^n for anything specified by the 'complete' option
+
+" NOW WE CAN:
+" - Use ^n and ^p to go back and forth in the suggestion list
+
+
+
+
+
+" FILE BROWSING:
+
+" Tweaks for browsing
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+" let g:netrw_list_hide=netrw_gitignore#Hide() - doesn't work on linux???
+" let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+" NOW WE CAN:
+" - :edit a folder to open a file browser
+" - <CR>/v/t to open in an h-split/v-split/tab
+" - check |netrw-browse-maps| for more mappings
+
+
+
+" SNIPPETS:
+
+" Read an empty HTML template and move cursor to title
+nnoremap ,html :-1read $HOME/dotVim/skeleton.html<CR>3jwf>a
+
+" NOW WE CAN:
+" - Take over the world!
+"   (with much fewer keystrokes)
+
+" BUILD INTEGRATION:
+
+" Steal Mr. Bradley's formatter & add it to our spec_helper
+" http://philipbradley.net/rspec-into-vim-with-quickfix
+
+" Configure the `make` command to run RSpec
+set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
+
+set secure
