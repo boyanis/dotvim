@@ -277,3 +277,5 @@ set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
 
 " TODO(boyan): Make build to execute script!see:
 " https://hero.handmade.network/forums/code-discussion/t/709-need_some_help_with_getting_vim_to_run_a_build.bat
+" This should work if you always start vim fromk the project root folder!
+set makeprg=build.bat
