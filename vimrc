@@ -273,3 +273,7 @@ set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
 " set cindent - NO NEED!For instance, the indentation scripts 
 " for C and C++ file types properly set the 'cindent' option
 " set secure
+
+
+" TODO(boyan): Make build to execute script!see:
+" https://hero.handmade.network/forums/code-discussion/t/709-need_some_help_with_getting_vim_to_run_a_build.bat
