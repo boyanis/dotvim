@@ -271,6 +271,10 @@ nnoremap ,html :-1read $HOME/dotVim/skeleton.html<CR>3jwf>a
 " Configure the `make` command to run RSpec
 set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
 " set cindent - NO NEED!For instance, the indentation scripts 
+
+" make better function argument alignement:
+set cino+=(0
+set cinoptions+=t0
 " for C and C++ file types properly set the 'cindent' option
 " set secure
 
@@ -282,3 +286,6 @@ set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
 set makeprg=.\src\build.bat
 " Remap copy key to command:
 vnoremap <C-c> "+y
+
+
+
