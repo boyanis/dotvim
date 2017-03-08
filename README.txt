@@ -43,5 +43,5 @@ D:\Programs\VimWindows\Vim\vimfiles C:\Users\<Username>\dotvim\vimfiles
     7.  Create soft link to vimfiles [~/dotvim/vimfiles] 
         > ln -s ~/dotvim/vimfiles ~/.vim
         
-WIN cygwin:
+WIN -> cygwin's vim:
         Like in Linux but in the cygwin folder? (TODO: check this and describe it better)
