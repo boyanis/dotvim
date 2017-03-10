@@ -283,7 +283,7 @@ set cinoptions+=t0
 " https://hero.handmade.network/forums/code-discussion/t/709-need_some_help_with_getting_vim_to_run_a_build.bat
 " This should work if you always start vim fromk the project root folder!
 
-set makeprg=.\src\build.bat
+set makeprg=.\misc\build.bat
 " Remap copy key to command:
 vnoremap <C-c> "+y
 
