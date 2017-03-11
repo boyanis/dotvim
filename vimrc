@@ -273,6 +273,14 @@ set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
 " set cindent - NO NEED!For instance, the indentation scripts 
 
 " make better function argument alignement:
+"set cinoptions+=:0
+
+"set cinoptions+=l1
+"set cinoptions+={0s
+"set cinoptions+=:0
+"set cinoptions+=h0
+set cinoptions+==0
+set cinoptions+=l0
 set cino+=(0
 set cinoptions+=t0
 " for C and C++ file types properly set the 'cindent' option
