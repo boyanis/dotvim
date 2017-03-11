@@ -1,4 +1,4 @@
-My N00b settings for Vim, Linux (and Windows?)
+My personal N00b settings for Vim, Linux and Windows. Use at your own risk.
 
 Installation:
 
