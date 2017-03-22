@@ -302,15 +302,13 @@ if has("gui_running")
       
     if has("gui_gtk2")
         set guifont=Inconsolata\ 10
-        " set guifont=Consolas:h11:cANSI
         " GUI is running or is about to start.
         " Maximize gvim window (for an alternative on Windows, see simalt below).
         set lines=999 columns=999
     elseif has("gui_macvim")
         set guifont=Menlo\ Regular:h14
     elseif has("gui_win32") || has("gui_win64")
-        "set guifont=Consolas:h11:cANSI
-        set guifont=Inconsolata\ 10
+        set guifont=Consolas:h11:cANSI
         "Maximize window on start:
         au GUIEnter * simalt ~x
     endif
