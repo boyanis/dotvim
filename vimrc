@@ -287,6 +287,12 @@ vnoremap <C-c> "+y
 
 " Fonts and colors:
 
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
 " Display line numbers
 set number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
@@ -316,15 +322,12 @@ if has("gui_running")
     " colorscheme desert
     colorscheme slate
     " highlight PreProc guifg=White guibg=grey15
-    " highlight Normal guifg=white guibg=black
-
+    highlight Normal guifg=#c89664
+    highlight Type guifg=#c89664
+    highlight! link Structure Type
+    highlight! link Statement Type
+    highlight! link String Constant
     " NOTE(boyan): make Line numbers as highlight: Ignore in slate color scheme: 
     " xxx cterm=bold ctermfg=7 guifg=grey40
     highlight LineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE gui=NONE guifg=grey40 guibg=NONE
-endif
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
 endif
