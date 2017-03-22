@@ -1,8 +1,8 @@
 
 " An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2011 Apr 15
+" (original by Bram Moolenaar <Bram@vim.org>)
+" Maintainer: Boyan
+" Last change:	
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -51,10 +51,10 @@ endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+" if &t_Co > 2 || has("gui_running")
+"  syntax on
+"  set hlsearch
+" endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -152,18 +152,9 @@ set expandtab      " Expand TABs to spaces
 "DISABLE AUTO COMMENT NEXT LINE:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Display line numbers
-set number
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-
-" Highlight 110th column;
-" set colorcolumn=110
-" highlight ColorColumn ctermbg=DarkGrey
-" set cindent
-
 " Vim will create local/project-based vimrc files:
-set exrc
-"set secure - at the end of the file
+" set exrc
+" set secure - at the end of the file
 
 " Shell command to display shell results:
 function! s:ExecuteInShell(command)
@@ -295,5 +286,52 @@ set makeprg=.\misc\build.bat
 " Remap copy key to command:
 vnoremap <C-c> "+y
 
+" Fonts and colors:
+
+" Display line numbers
+set number
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" Highlight 110th column;
+" set colorcolumn=110
+" highlight ColorColumn ctermbg=DarkGrey
+" set cindent
+
+if has("gui_running")
+    set guioptions-=m  "menu bar
+    set guioptions-=T  "toolbar
+    " set guioptions-=r  "scrollbar
+      
+    if has("gui_gtk2")
+        " set guifont=Inconsolata\ 12
+        set guifont=Consolas:h11:cANSI
+        " GUI is running or is about to start.
+        " Maximize gvim window (for an alternative on Windows, see simalt below).
+        set lines=999 columns=999
+    elseif has("gui_macvim")
+        set guifont=Menlo\ Regular:h14
+    elseif has("gui_win32") || has("gui_win64")
+        set guifont=Consolas:h11:cANSI
+        "set guifont=Inconsolata\ 12
+        "Maximize window on start:
+        au GUIEnter * simalt ~x
+    endif
+
+    " colorscheme desert
+    colorscheme slate
+    " highlight PreProc guifg=White guibg=grey15
+    " highlight Normal guifg=white guibg=black
+
+    " NOTE(boyan): make Line numbers as highlight: Ignore in slate color scheme: 
+    " xxx cterm=bold ctermfg=7 guifg=grey40
+    highlight LineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE gui=NONE guifg=grey40 guibg=NONE
+endif
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
 
 
