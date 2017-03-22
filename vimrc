@@ -298,7 +298,7 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 if has("gui_running")
     set guioptions-=m  "menu bar
     set guioptions-=T  "toolbar
-    " set guioptions-=r  "scrollbar
+    set guioptions-=r  "scrollbar
       
     if has("gui_gtk2")
         set guifont=Inconsolata\ 10
