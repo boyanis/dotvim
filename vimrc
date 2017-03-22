@@ -1,4 +1,3 @@
-
 " An example for a vimrc file.
 " (original by Bram Moolenaar <Bram@vim.org>)
 " Maintainer: Boyan
@@ -296,23 +295,22 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 " set colorcolumn=110
 " highlight ColorColumn ctermbg=DarkGrey
 " set cindent
-
 if has("gui_running")
     set guioptions-=m  "menu bar
     set guioptions-=T  "toolbar
     " set guioptions-=r  "scrollbar
       
     if has("gui_gtk2")
-        " set guifont=Inconsolata\ 12
-        set guifont=Consolas:h11:cANSI
+        set guifont=Inconsolata\ 10
+        " set guifont=Consolas:h11:cANSI
         " GUI is running or is about to start.
         " Maximize gvim window (for an alternative on Windows, see simalt below).
         set lines=999 columns=999
     elseif has("gui_macvim")
         set guifont=Menlo\ Regular:h14
     elseif has("gui_win32") || has("gui_win64")
-        set guifont=Consolas:h11:cANSI
-        "set guifont=Inconsolata\ 12
+        "set guifont=Consolas:h11:cANSI
+        set guifont=Inconsolata\ 10
         "Maximize window on start:
         au GUIEnter * simalt ~x
     endif
@@ -326,12 +324,9 @@ if has("gui_running")
     " xxx cterm=bold ctermfg=7 guifg=grey40
     highlight LineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE gui=NONE guifg=grey40 guibg=NONE
 endif
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
-
-
