@@ -334,7 +334,7 @@ if has("gui_running")
     highlight Pmenu guifg=Black
     highlight PmenuSel guifg=Black
     "highlight! link Todo Underlined 
-    highlight Todo guibg = Black guifg=Red term=underline
+    highlight Todo guibg = Black guifg=Red term=underline cterm=underline
     " NOTE(boyan): make Line numbers as highlight: Ignore in slate color scheme: 
     " xxx cterm=bold ctermfg=7 guifg=grey40
     highlight LineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE gui=NONE guifg=grey40 guibg=NONE
