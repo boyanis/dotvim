@@ -330,7 +330,7 @@ if has("gui_running")
     highlight! link Structure Type
     highlight! link Statement Type
     highlight! link String Constant
-    highlight! link PreProc Underlined
+    highlight PreProc guifg=#C3B9AE
     " NOTE(boyan): make Line numbers as highlight: Ignore in slate color scheme: 
     " xxx cterm=bold ctermfg=7 guifg=grey40
     highlight LineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE gui=NONE guifg=grey40 guibg=NONE
