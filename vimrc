@@ -320,10 +320,13 @@ if has("gui_running")
     endif
 
     " colorscheme desert
-    colorscheme slate
+    " colorscheme slate
+    " colorscheme murphy
+    colorscheme pablo
     " highlight PreProc guifg=White guibg=grey15
     highlight Normal guifg=#c89664
     highlight Type guifg=#c89664
+    highlight Constant guifg=#FA8072
     highlight! link Structure Type
     highlight! link Statement Type
     highlight! link String Constant
