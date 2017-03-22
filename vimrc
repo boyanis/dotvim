@@ -314,8 +314,8 @@ if has("gui_running")
     elseif has("gui_macvim")
         set guifont=Menlo\ Regular:h14
     elseif has("gui_win32") || has("gui_win64")
-        "set guifont=Consolas:h11:cANSI
-        set guifont=Lucida_Console:h10:cANSI
+        set guifont=Consolas:h11:cANSI
+        "set guifont=Lucida_Console:h10:cANSI
         "Maximize window on start:
         au GUIEnter * simalt ~x
     endif
