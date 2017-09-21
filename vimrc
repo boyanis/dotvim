@@ -99,6 +99,10 @@ endif
 
 " ==============================================================
 " NOTE(boyan): END of example file; Boyan's n00b settings follow:
+
+" NOTE(boyan): fix file watching when saving files, for example for webpack --watch
+set backupcopy=yes
+
 execute pathogen#infect()
 " NOTE(boyan): old way:
 " call pathogen#runtime_append_all_bundles()
