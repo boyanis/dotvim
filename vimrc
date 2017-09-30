@@ -297,9 +297,10 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
+
 " Display line numbers
-set number
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+" set number
+" highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Highlight 110th column;
 " set colorcolumn=110
