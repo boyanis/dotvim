@@ -331,6 +331,8 @@ if has("gui_running")
     colorscheme pablo 
     " highlight PreProc guifg=White guibg=grey15
     highlight Normal guifg=#c89664
+    highlight! link NonText Directory 
+    highlight! link Special Directory 
     highlight Type guifg=#c89664
     highlight Constant guifg=#FA8072
     highlight! link Structure Type
